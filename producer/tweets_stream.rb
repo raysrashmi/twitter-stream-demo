@@ -11,7 +11,7 @@ class TweetsStream
     twitter_client.filter(track: @topics.join(",")) do |object|
        resp = aws_client.put_record(
          {
-           stream_name: "tweets-stream-TweetsStream-DBI9JYZVM2NK",
+           stream_name: "tweets-stream-TweetsStream-11507MK0HZ1TV",
            data: object.text,
            partition_key: SecureRandom.random_number.to_s
          })
