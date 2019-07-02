@@ -11,4 +11,19 @@ To run try it out
 Put twitter api key and credentials in producer/tweets_stream.rb
 Then run it normally by `ruby producer/tweets_stream.rb`
 
-To Push this code to amazon follow the steps mention here https://aws.amazon.com/de/blogs/compute/announcing-ruby-support-for-aws-lambda/
+To Deploy the app
+1. Create bucket ```aws s3 mb s3://tweets-stream```
+2. Package your app by running
+
+ ```
+sam package --template-file template.yaml \
+--output-template-file packaged-template.yaml \
+--s3-bucket tweets-stream
+```
+
+3. Deploy app
+
+```
+sam deploy --template-file packaged-template.yaml --stack-name tweets-stream --capabilities CAPABILITY_IAM
+```
+Resources: https://aws.amazon.com/de/blogs/compute/announcing-ruby-support-for-aws-lambda/

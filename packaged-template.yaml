@@ -36,7 +36,7 @@ Resources:
               - Arn
             StartingPosition: TRIM_HORIZON
             BatchSize: 25
-      CodeUri: s3://tweets-stream/b7fb73f85113b633e6d4c345f4fa6f1f
+      CodeUri: s3://tweets-stream/220405497511f9da5673e8f2d586def5
   Tweets:
     Type: AWS::Serverless::SimpleTable
     Properties:
